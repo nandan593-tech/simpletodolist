@@ -1,0 +1,70 @@
+main{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    background-color:  rgba(0, 13, 17, 0.955);
+    box-shadow: 0px 4px 6px rgba(5, 175, 236, 0.868);
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+header{
+    text-align: center;
+    background-color: rgba(0, 13, 17, 0.955);
+    padding: 10px;
+    margin-bottom: 20px;
+    color: rgba(242, 242, 9, 0.864);
+    box-shadow: 0px 4px 6px rgba(229, 11, 182, 0.868);
+    height: 30vh;
+    padding: 50px;
+}   
+button{
+    width:50px;
+    height:30px;
+    background-color: rgb(20, 170, 245);
+    color:rgb(255, 251, 251);
+    box-shadow: 0px 4px 6px rgba(235, 247, 9, 0.868);
+    text-align: center;
+    font-family: verdana;
+}
+#list{
+     display:flex;
+    justify-content: center;
+    gap:15px;
+    flex-direction:row;
+
+}
+#input{
+    display:flex;
+    justify-content: center;
+    gap: 15px;  
+    flex-direction: column;
+    color:rgba(242, 242, 9, 0.864);
+}
+#solutions{
+    display:flex;
+    justify-content: center;
+    gap:15px;
+    flex-direction: column;
+    color:rgba(242, 242, 9, 0.864);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(0, 13, 17, 0.955);
+}
+#name1{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
+#output{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
