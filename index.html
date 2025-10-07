@@ -1,37 +1,26 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="styles.css">
-   <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO Do List</title>
  </head>
  <body>
-  <header>
-    <h1>TO DO LIST</h1>
-    <h2>Manage your tasks efficiently</h2>
-  </header>
-  <main>
-    <section id="list">
-      <div id="input">
-      
-           <label for="name">Name:<input type="text" id="name" placeholder="enter your name"></label>
-           <label for="todo">To Do:<input type="text" id="todo" placeholder="enter what todo"></label>
-              <button>Add</button>
-      </div>
-    </section>
-    <section id="solutions">
-      <div id="output">
-        <h3>Task List</h3>
-      </div>
-      <div id="name1">
-        <p>name1</p>
-        <p>Task 1</p>
-        <p>Date</p>
-        <button style="height: 30px; width: 80px;">Remove</button>
-      </div>
-    </section>
+    <h1>To Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a new task" class="js-input">
+    <button class="js-btn" onclick="addTodo()">Add</button>
+    <script>
+        const todoArray=[];
+        function addTodo(){
+            const inputElement=document.querySelector(".js-input");
+            
+            const inputValue=inputElement.value;
+            todoArray.push(inputValue);
+            console.log(todoArray);
+            inputElement.value="";
+        }
+
+    </script>
     
-  </main>
  </body>
- </html>
+ </html>                                                                                                                                                                                                                                                 
