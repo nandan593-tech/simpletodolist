@@ -1,26 +1,55 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO Do List</title>
- </head>
- <body>
-    <h1>To Do List</h1>
-    <input type="text" id="taskInput" placeholder="Enter a new task" class="js-input">
-    <button class="js-btn" onclick="addTodo()">Add</button>
-    <script>
-        const todoArray=[];
-        function addTodo(){
-            const inputElement=document.querySelector(".js-input");
-            
-            const inputValue=inputElement.value;
-            todoArray.push(inputValue);
-            console.log(todoArray);
-            inputElement.value="";
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TO Do List</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>To Do List</h1></header>
+<div id="input">
+<label for="nameInput">Name:<input type="text" id="nameInput" placeholder="enter your name" class="js-name"></label>
+<label for="taskInput">Task:<input type="text" id="taskInput" placeholder="Enter a new task" class="js-input"></label>
+<label for="dateInput">Due Date:<input type="date" id="dateInput" class="js-date"/></label>
+<button class="js-btn" id="but" onclick="addTodo()">Add</button>
+</div>
+<div class="js-todo" id="output">
+</div>
+<script>
+const todoArray=[];
 
-    </script>
-    
- </body>
- </html>                                                                                                                                                                                                                                                 
+function displayTodos(){
+    let todoElements='';
+for(let i=0;i<=todoArray.length-1;i++)
+{const itemObject=todoArray[i];
+    const{yourname,name,dueDate}=itemObject;
+
+    const html=`<p>${yourname} - ${name} - ${dueDate}
+        <button id="but" onclick="todoArray.splice(${i}, 1);displayTodos();">Delete</button></p>`;
+    todoElements+=html;
+}
+document.querySelector('.js-todo').innerHTML=todoElements;
+
+}
+function addTodo(){
+const inputElement=document.querySelector(".js-input");
+const dateElement=document.querySelector(".js-date");
+const nameElement=document.querySelector(".js-name");
+const yourname=nameElement.value;
+const inputValue=inputElement.value;
+const dateValue=dateElement.value;
+todoArray.push({yourname:nameElement.value,name: inputValue, dueDate: dateValue});
+console.log(todoArray);
+inputElement.value="";
+dateElement.value="";
+nameElement.value="";
+displayTodos();
+
+}
+
+</script>
+
+</body>
+</html>
+</html>
